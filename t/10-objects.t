@@ -26,10 +26,6 @@ my $numbers = $get->numbers;
 is( ref $numbers, 'Locale::CLDR::Lite', 'Locale object returned' );
 is( $numbers->{node}->[-1]->{name}, 'numbers', 'Object node is numbers' );
 
-# Can we get a value
-my $decimal = $numbers->symbols(numberSystem => 'latn')->decimal();
-is( $decimal, '.', 'Locale object returned' );
-
 # Is get still at get?
 is( ref $get, 'Locale::CLDR::Lite', 'Locale object returned' );
 is_deeply( $get->{node}, [], 'Object node is empty' );
@@ -42,6 +38,10 @@ is( $symbols->{node}->[-1]->{name}, 'symbols', 'Object node is symbols' );
 # Is numbers still at numbers?
 is( ref $numbers, 'Locale::CLDR::Lite', 'Locale object returned' );
 is( $numbers->{node}->[-1]->{name}, 'numbers', 'Object node is numbers' );
+
+# Can we get a value
+my $decimal = $numbers->symbols(numberSystem => 'latn')->decimal();
+is( $decimal, '.', 'Locale object returned' );
 
 
 diag( "Testing attribute selector" );

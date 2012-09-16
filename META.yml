@@ -22,6 +22,7 @@ no_index:
     - t
 requires:
   File::ShareDir: 0
+  XML::Simple: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.01_01
+version: 0.01_02
